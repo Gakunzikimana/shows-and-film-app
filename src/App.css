@@ -53,3 +53,8 @@ overflow: hidden;
 .show-image{
 width: 100%;
 }
+
+.Header {
+  display: flex;
+  justify-content:
+}
