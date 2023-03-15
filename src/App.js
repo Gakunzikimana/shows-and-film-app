@@ -1,13 +1,29 @@
 import './App.css';
-import showsData from  './shows-data';
-import ShowList from './component/ShowList'; 
+
 import Header from './component/Header';
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import Upcoming from './pages/Upcoming';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'; 
+import NotFound from './pages/NotFound';
+
 function App() {
   return (
     <div className="App"> 
+      <Router>
+      
       <Header />
-      <h1>The Best TV Shows App</h1>
-      <ShowList shows={showsData}/>
+      
+      <Routes>
+      
+      <Route exact path="/" element={<Home/>}/>
+      <Route path="/home"element={<Home/>}/>
+      <Route path= "/favorites"element={<Favorites/>}/>
+      <Route path="/upcoming" element= {<Upcoming/>}/>
+      <Route path="*" element= {<NotFound/>}/>
+      
+      </Routes>
+      </Router>
     </div>
   );
 

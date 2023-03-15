@@ -23,13 +23,13 @@
 }
 
 .navigation{
-background-color: black;
+  background-color: black;
 display: flex;
 gap: 30px;
-align-items: center;
+align-items:center;
 }
 
-.navigation a{
+.navigation a {
 color: white;
 font-weight: bold;
 }
