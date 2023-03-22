@@ -4,8 +4,9 @@ import Header from './component/Header';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import Upcoming from './pages/Upcoming';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'; 
 import NotFound from './pages/NotFound';
+import ShowPage from'./pages/ShowPage';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'; 
 
 function App() {
   return (
@@ -14,15 +15,16 @@ function App() {
       
       <Header />
       
-      <Routes>
-      
-      <Route exact path="/" element={<Home/>}/>
-      <Route path="/home"element={<Home/>}/>
-      <Route path= "/favorites"element={<Favorites/>}/>
-      <Route path="/upcoming" element= {<Upcoming/>}/>
-      <Route path="*" element= {<NotFound/>}/>
-      
-      </Routes>
+        <Routes>
+        
+        <Route exact path="/" element={<Home/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path= "/favorites" element={<Favorites/>}/>
+        <Route path="/upcoming" element= {<Upcoming/>}/>
+        <Route path="/show/:showID" element={<ShowPage/>}/>
+        <Route path="*" element= {<NotFound/>}/>
+        
+        </Routes>
       </Router>
     </div>
   );
