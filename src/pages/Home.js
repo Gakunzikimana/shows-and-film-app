@@ -1,11 +1,21 @@
-import showsData from  '../shows-data';
+import { getHomeShows } from '../helpers/showsHelper';
 import ShowList from'../component/ShowList';
+
+const showsData = getHomeShows()
+
 function Home(){
     return(
-        <div>
+        <>
+        {
+            !!showsData ?
+            <div className="HomePage">
             <h2>this is the homepage</h2>
             <ShowList shows={showsData}/>
-        </div>
+            </div>
+            :
+            <h1>couldn't load shows</h1>
+        }
+        </>
     )
     
 }
