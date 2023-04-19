@@ -1,17 +1,24 @@
 import { searchForShow } from "../helpers/showsHelper"
+import ShowList from "../component/ShowList"
+import { useParams} from "react-router-dom" 
+
 function Search () {
+
+    const params = useParams()
+    const  searchResults = searchForShow(params.searchText) 
 
     return(
         <>
         <h1>Search</h1>
-        <input type="text" onChange={searchShows}/>
+        {
+            searchResults.length >  0 ? <ShowList shows={searchResults}/> 
+            : <h2>No shows found</h2>
+        }
         </>
+
     )
 }
 
-function searchShows(event){
-    const searchText = (event.target.value)
-    console.log(searchForShow(searchText))
-}
+
 
 export default Search
