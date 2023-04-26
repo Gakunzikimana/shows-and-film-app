@@ -24,7 +24,7 @@ const navigate = useNavigate()
           if (event.target.value === ""){
           navigate("/")
         } else {
-        navigate("/search/" +event.target.value )
+        navigate("/search/" + encodeURI(event.target.value ))
 
         }
         
